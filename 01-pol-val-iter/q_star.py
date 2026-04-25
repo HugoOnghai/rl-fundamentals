@@ -23,7 +23,7 @@ def construct_q_star(v_star, pi_star, transitions, gamma=GAMMA):
     return q_star
 
 def save_q_star(q_star):
-    np.savez("./01-pol-val-iter/01_q_star", q_star)
+    np.save("./01-pol-val-iter/01_q_star", q_star)
 
 def interpret_q_star(env, q_star):
     curr_state = env.reset() # start in the top left with no flags collected
@@ -35,7 +35,7 @@ def interpret_q_star(env, q_star):
         best_action = np.argmax(q_star[curr_state])
         reward, curr_state, done = env.step(curr_state, best_action) # update curr_state after taking best action
         print("Current reward: %s" % reward)
-        time.sleep(0.75)
+        time.sleep(SPP)
         env.plot(curr_state, best_action, extra_lines=2)
 
     print("Current reward: %s" % reward)
