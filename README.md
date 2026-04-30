@@ -38,4 +38,7 @@ N.B., these will overwrite the current `param_plot.png` and `perf_eval_plot.png`
 
 ## 3. Continuous State Space Problems
 
-To be implemented!
+I implemented the REINFORCE policy-gradient function to train agents in Gymnasium's `acrobot-v1` and `mountaincar-v0` environments. My policy parameterization was linearized and dependent only on the state variables. Then, an exponential soft-max was applied to convert preferences to probabilities. This form is analytically differentiable, and the gradient with respect to parametrization `theta` is referred to as the eligibility vector, as it is called in "Reinforcement Learning: An Introduction" by Sutton and Barto.
+
+To run `reinforce.py` you can call: `uv run 03-cont-ss/acrobot-v1.py` or `uv run 03-cont-ss/mountaincar-v0.py` for each environment. However, note that `src/project4/parameters.py` is currently configured for the Mountain Car, and so some tweaks may need to be made to get good performance with Acrobot.
+

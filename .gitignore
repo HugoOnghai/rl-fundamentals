@@ -10,3 +10,5 @@ wheels/
 .venv
 
 # 
+03-cont-ss/acrobot_videos/
+03-cont-ss/mountaincar_videos/

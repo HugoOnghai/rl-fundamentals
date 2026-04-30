@@ -33,9 +33,8 @@ def policy_evaluation(policy, valueOfState, transitions, gamma=GAMMA, theta=THET
     numActions = NUM_ACTIONS
 
     # pi'(s) = argmax_a sum_{s',r} p(s',r|s,a)[r + gamma v_pi(s')]
-    delta = 0
-
-    while(delta < theta): # a small pos num determining the accuray of estim (from RL Book)
+    delta = 1 # arbitrary value larger than theta
+    while(delta > theta): # a small pos num determining the accuray of estim (from RL Book) break once delta < theta
         delta = 0
 
         for s in range(numStates):

@@ -40,12 +40,12 @@ for a in alphas:
 
 fig.suptitle("Optimal Q Values with Hyperparameter Tuning")
 ax1.set_ylabel(r"RMSE (w.r.t. $Q^\star$)")
-ax1.set_xlabel(r"Q-Learning Step ($t$)")
+ax1.set_xlabel("Episode")
 ax1.set_title(rf"Tuning Epsilon (fixed $\alpha=${ALPHA})")
 ax1.legend(title=r"$\epsilon$")
 
 ax2.set_ylabel(r"RMSE (w.r.t. $Q^\star$)")
-ax2.set_xlabel(r"Q-Learning Step ($t$)")
+ax2.set_xlabel("Episode")
 ax2.set_title(rf"Tuning Alpha (fixed $\epsilon=${EPSILON})")
 ax2.legend(title=r"$\alpha$")
 
